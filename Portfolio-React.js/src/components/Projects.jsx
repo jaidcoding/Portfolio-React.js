@@ -1,10 +1,10 @@
-import { useEffect, useRef } from "react"
-import image1 from "../../public/1.png"
-import image2 from "../../public/2.png"
-import image3 from "../../public/3.png"
-import image4 from "../../public/4.png"
-import image5 from "../../public/5.png"
-import { motion, useInView } from 'framer-motion'
+import { useEffect, useRef } from "react";
+import image1 from "/1.png";
+import image2 from "/2.png";
+import image3 from "/3.png";
+import image4 from "/4.png";
+import image5 from "/5.png";
+import { motion, useInView } from 'framer-motion';
 import PropTypes from 'prop-types';
 
 const projectsData = [

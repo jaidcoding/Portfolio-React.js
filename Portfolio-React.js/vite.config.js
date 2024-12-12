@@ -8,5 +8,6 @@ if (typeof globalThis.structuredClone === 'undefined') {
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/Portfolio-React.js/', // Ensure this matches your repository name
   plugins: [react()],
 });
