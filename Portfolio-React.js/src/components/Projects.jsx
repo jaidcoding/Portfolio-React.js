@@ -1,10 +1,11 @@
 import { useEffect, useRef } from "react"
-import image1 from "../../src/assets/1.png"
-import image2 from "../../src/assets/2.png"
-import image3 from "../../src/assets/3.png"
-import image4 from "../../src/assets/4.png"
-import image5 from "../../src/assets/5.png"
+import image1 from "../../public/1.png"
+import image2 from "../../public/2.png"
+import image3 from "../../public/3.png"
+import image4 from "../../public/4.png"
+import image5 from "../../public/5.png"
 import { motion, useInView } from 'framer-motion'
+import PropTypes from 'prop-types';
 
 const projectsData = [
   {
@@ -61,6 +62,10 @@ const ScrollReveal = ({children}) => {
   )
 }
 
+ScrollReveal.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
 const ProjectCard = ({project}) => {
   console.log("ProjectCard rendered for:", project.title);
   return (
@@ -87,8 +92,16 @@ const ProjectCard = ({project}) => {
       </div>
     </ScrollReveal>
   )
-
 }
+
+ProjectCard.propTypes = {
+  project: PropTypes.shape({
+    image: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    technologies: PropTypes.arrayOf(PropTypes.string).isRequired,
+  }).isRequired,
+};
 
 const Projects = () => {
   console.log("Projects component rendered");
@@ -108,6 +121,6 @@ const Projects = () => {
       </div>
     </div>
   )
-}
+};
 
-export default Projects
+export default Projects;
